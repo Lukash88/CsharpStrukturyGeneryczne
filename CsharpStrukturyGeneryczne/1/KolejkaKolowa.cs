@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _1_TypyGeneryczne;
 
 namespace _1_TypyGeneryczne
 {
@@ -58,7 +57,7 @@ namespace _1_TypyGeneryczne
         {
             get
             {
-                return (koniecBufora + 1) % bufor.Length == poczatekBufora; 
+                return (koniecBufora + 1) % bufor.Length == poczatekBufora;
             }
         }
     }
