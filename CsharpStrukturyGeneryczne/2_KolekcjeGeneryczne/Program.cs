@@ -73,6 +73,87 @@ namespace _2_KolekcjeGeneryczne
             //    Console.WriteLine("{0}:{1}",pracownik.Key, pracownik.Value.Nazwisko);
             //}
 
+            //Dictionary();
+            //SortedDictionary();
+            //SortedList();
+            //SortedSetInt();
+            //SortedSetString();
+
+        }
+
+        private static void SortedSetInt()
+        {
+            var setInt = new SortedSet<int>();
+            setInt.Add(9);
+            setInt.Add(7);
+            setInt.Add(5);
+            setInt.Add(5);
+            setInt.Add(11);
+            setInt.Add(4);
+            setInt.Add(2);
+
+            foreach (var item in setInt)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private static void SortedSetString()
+        {
+            var setString = new SortedSet<string>();
+            setString.Add("tomek");
+            setString.Add("adam");
+            setString.Add("iza");
+            setString.Add("kamila");
+            setString.Add("paula");
+            setString.Add("jozek");
+            setString.Add("luka");
+
+            foreach (var item in setString)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private static void SortedDictionary()
+        {
+            var listaPosortowana = new SortedDictionary<int, string>();
+
+            listaPosortowana.Add(5, "piec");
+            listaPosortowana.Add(4, "cztery");
+            listaPosortowana.Add(2, "dwa");
+            listaPosortowana.Add(1, "jeden");
+
+            foreach (var item in listaPosortowana)
+            {
+                Console.WriteLine(item.Value);
+            }
+        }
+
+        private static void SortedList()
+        {
+            var pracownicy = new SortedList<string, List<Pracownik>>();
+
+            pracownicy.Add("Sprzedaz", new List<Pracownik> { new Pracownik { Imie = "Jan", Nazwisko = "Kowalski" },
+                                                             new Pracownik { Imie = "Adam", Nazwisko = "Klyszcz" },
+                                                             new Pracownik { Imie = "Katarina", Nazwisko = "Solara" } });
+
+            pracownicy.Add("Informatyka", new List<Pracownik> { new Pracownik { Imie = "Marcin", Nazwisko = "Nowak" },
+                                                                new Pracownik { Imie = "Tomasz", Nazwisko = "Mikus" } });
+
+            pracownicy.Add("Ksiegowosc", new List<Pracownik> { new Pracownik { Imie = "Renata", Nazwisko = "Delektowna" },
+                                                               new Pracownik { Imie = "Zofia", Nazwisko = "Debczak" },
+                                                               new Pracownik { Imie = "Izabela", Nazwisko = "Skorupka" },
+                                                               new Pracownik { Imie = "Janusz", Nazwisko = "Cebula" } });
+
+            foreach (var item in pracownicy)
+            {
+                Console.WriteLine("Ilosc pracownikow w dziale {0} wynosi {1}.", item.Key, item.Value.Count);
+            }
+        }
+
+        private static void Dictionary()
+        {
             var pracownicy = new Dictionary<string, List<Pracownik>>();
             pracownicy.Add("Ksiegowosc", new List<Pracownik>() { new Pracownik { Nazwisko = "Nowak" },
                                                                  new Pracownik { Nazwisko = "Kowal" },
@@ -85,10 +166,10 @@ namespace _2_KolekcjeGeneryczne
             pracownicy.Add("Informatyka", new List<Pracownik> { new Pracownik { Nazwisko = "Sokalski" },
                                                                 new Pracownik { Nazwisko = "Zaremba" },
                                                                 new Pracownik { Nazwisko = "Zaskalski" } });
-            
+
             foreach (var item in pracownicy)
             {
-                Console.WriteLine("Dzial : "+ item.Key);
+                Console.WriteLine("Dzial : " + item.Key);
 
                 foreach (var pracownik in item.Value)
                 {
@@ -103,7 +184,6 @@ namespace _2_KolekcjeGeneryczne
             {
                 Console.WriteLine(item.Nazwisko);
             }
-
         }
 
         private static void LinkedList2()
