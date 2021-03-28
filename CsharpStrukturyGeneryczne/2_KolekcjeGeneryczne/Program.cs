@@ -54,10 +54,116 @@ namespace _2_KolekcjeGeneryczne
 
             //Kolejka();
             //Stos();
+            //StosInt();
+            //StosPracownik();
+            //HashSet();
+            // LinkedList();
+            //LinkedList2();
 
-            StosInt();
-            StosPracownik();
+            //var pracownicy = new Dictionary<string, Pracownik>();
 
+            //pracownicy.Add("Nowak", new Pracownik { Nazwisko = "Nowak" });
+            //pracownicy.Add("Bochenek", new Pracownik { Nazwisko = "Bochenek" });
+            //pracownicy.Add("Kowalski", new Pracownik { Nazwisko = "Kowalski" });
+
+            //var kowal = pracownicy["Nowak"];
+
+            //foreach (var pracownik in pracownicy)
+            //{
+            //    Console.WriteLine("{0}:{1}",pracownik.Key, pracownik.Value.Nazwisko);
+            //}
+
+            var pracownicy = new Dictionary<string, List<Pracownik>>();
+            pracownicy.Add("Ksiegowosc", new List<Pracownik>() { new Pracownik { Nazwisko = "Nowak" },
+                                                                 new Pracownik { Nazwisko = "Kowal" },
+                                                                 new Pracownik { Nazwisko = "Ziomalski"} });
+
+            //...
+
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Nowak" });
+
+            pracownicy.Add("Informatyka", new List<Pracownik> { new Pracownik { Nazwisko = "Sokalski" },
+                                                                new Pracownik { Nazwisko = "Zaremba" },
+                                                                new Pracownik { Nazwisko = "Zaskalski" } });
+            
+            foreach (var item in pracownicy)
+            {
+                Console.WriteLine("Dzial : "+ item.Key);
+
+                foreach (var pracownik in item.Value)
+                {
+                    Console.WriteLine(pracownik.Nazwisko);
+                }
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Pracownicy z dzialu ksiegowosci:");
+
+            foreach (var item in pracownicy["Ksiegowosc"])
+            {
+                Console.WriteLine(item.Nazwisko);
+            }
+
+        }
+
+        private static void LinkedList2()
+        {
+            LinkedList<int> lista = new LinkedList<int>();
+            lista.AddFirst(5);
+            lista.AddFirst(6);
+            lista.AddFirst(7);
+
+            var elementPierwszy = lista.First;
+            var elementOstatni = lista.Last;
+
+
+            lista.AddAfter(elementPierwszy, 10);
+            lista.AddBefore(elementPierwszy, 20);
+
+            foreach (var item in lista)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("\n\n");
+
+            var wezel = lista.First;
+
+            while (wezel != null)
+            {
+                Console.WriteLine(wezel.Value);
+                wezel = wezel.Next;
+            }
+        }
+
+        private static void LinkedList()
+        {
+            LinkedList<int> lista = new LinkedList<int>();
+            lista.AddFirst(5);
+            lista.AddFirst(6);
+            lista.AddFirst(7);
+            lista.AddLast(1);
+            lista.AddLast(2);
+
+            foreach (var item in lista)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private static void HashSet()
+        {
+            HashSet<Pracownik> set = new HashSet<Pracownik>();
+
+            var pracownik = new Pracownik { Imie = "Jurek" };
+
+            set.Add(pracownik);
+            set.Add(pracownik);
+
+            foreach (var item in set)
+            {
+                Console.WriteLine(item.Imie);
+            }
         }
 
         private static void StosPracownik()
